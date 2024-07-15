@@ -3,7 +3,7 @@
 echo "customer_id,max_sales_ymd,min_sales_ymd";
 
 
-maxdata=$(tail -n +2 ./data/receipt.csv | LC_ALL=C sort -t, -k6,6 -k1,1rn | awk -F, '
+maxdata=$(tail -n +2 ./data/receipt.csv | LC_ALL=C sort -t, -k6 -k1rn | awk -F, '
 {
 	if (prev != $6) {
 		print $6","$1
@@ -14,7 +14,7 @@ maxdata=$(tail -n +2 ./data/receipt.csv | LC_ALL=C sort -t, -k6,6 -k1,1rn | awk 
 
 # printf "%s\n" "$maxdata"
 
-mindata=$(tail -n +2 ./data/receipt.csv | LC_ALL=C sort -t, -k6,6 -k1,1n | awk -F, '
+mindata=$(tail -n +2 ./data/receipt.csv | LC_ALL=C sort -t, -k6 -k1n | awk -F, '
 {
 	if (prev != $6) {
 		print $6","$1

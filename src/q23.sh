@@ -13,4 +13,4 @@ END {
 		print i","a[i]","b[i];
 	}
 }
-' | LC_ALL=C sort -t$',' -k1,1
+' | LC_ALL=C sort -t$',' -k1
